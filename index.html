@@ -3,254 +3,614 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>LIVE INDONESIA 🇮🇩</title>
+<meta name="description"
+content="LIVE INDONESIA - Platform Live Streaming Indonesia">
 
-    <style>
+<title>LIVE INDONESIA 🇮🇩</title>
 
-        * {
-            box-sizing: border-box;
-        }
 
-        body {
-            margin: 0;
-            background: #0b0d12;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
+<style>
 
-        /* HEADER */
+/* ========================================
+   DASAR
+======================================== */
 
-        header {
-            background: #151922;
-            padding: 18px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            border-bottom: 1px solid #252a35;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .header-content {
-            max-width: 1100px;
-            margin: auto;
+html {
+    scroll-behavior: smooth;
+}
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+body {
 
-        .logo {
-            font-size: 21px;
-            font-weight: bold;
-        }
+    margin: 0;
 
-        .logo span {
-            color: #ff3030;
-        }
+    background: #080a0f;
 
-        /* SEARCH */
+    color: white;
 
-        .search {
-            max-width: 1100px;
-            margin: 25px auto;
-            padding: 0 20px;
-        }
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-        .search input {
-            width: 100%;
+}
 
-            padding: 15px;
 
-            border-radius: 10px;
-            border: 1px solid #252a35;
+/* ========================================
+   HEADER
+======================================== */
 
-            background: #191e2a;
-            color: white;
+header {
 
-            font-size: 15px;
-            outline: none;
-        }
+    position: sticky;
 
-        .search input:focus {
-            border-color: #e50914;
-        }
+    top: 0;
 
-        /* MAIN */
+    z-index: 100;
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
+    background: #11141c;
 
-            padding: 0 20px 50px;
-        }
+    border-bottom:
+        1px solid #252a35;
 
-        .title {
-            margin-top: 30px;
-        }
+}
 
-        /* PLAYER */
 
-        .player {
-            width: 100%;
+.header {
 
-            aspect-ratio: 16 / 9;
+    max-width: 1200px;
 
-            background: #000;
+    margin: auto;
 
-            border-radius: 14px;
+    padding: 16px 20px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    display: flex;
 
-            margin-top: 15px;
+    align-items: center;
 
-            border: 1px solid #252a35;
+    justify-content: space-between;
 
-            overflow: hidden;
-        }
+}
 
-        .player-text {
-            text-align: center;
-            color: #999;
-        }
 
-        .player-icon {
-            font-size: 50px;
-        }
+.logo {
 
-        /* FILTER */
+    font-size: 20px;
 
-        .filters {
-            display: flex;
+    font-weight: bold;
 
-            gap: 10px;
+}
 
-            overflow-x: auto;
 
-            padding: 15px 0;
-        }
+.logo-red {
 
-        .filter {
-            background: #1a1f2b;
+    color: #ff3030;
 
-            border: none;
+}
 
-            color: white;
 
-            padding: 10px 16px;
+.header-right {
 
-            border-radius: 20px;
+    font-size: 20px;
 
-            white-space: nowrap;
+}
 
-            cursor: pointer;
-        }
 
-        .filter.active {
-            background: #e50914;
-        }
+/* ========================================
+   SEARCH
+======================================== */
 
-        /* CHANNEL */
+.search-area {
 
-        .channel-grid {
-            display: grid;
+    max-width: 1200px;
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
+    margin: 20px auto;
 
-            gap: 15px;
+    padding: 0 20px;
 
-            margin-top: 15px;
-        }
+}
 
-        .channel {
-            background: #171b25;
 
-            border-radius: 12px;
+.search-box {
 
-            overflow: hidden;
+    width: 100%;
 
-            cursor: pointer;
+    padding: 15px 18px;
 
-            transition: 0.2s;
+    border-radius: 12px;
 
-            border: 1px solid #202532;
-        }
+    border: 1px solid #292e3a;
 
-        .channel:hover {
-            transform: translateY(-3px);
-        }
+    background: #151923;
 
-        .thumbnail {
-            height: 120px;
+    color: white;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #252b39,
-                    #0d1016
-                );
+    font-size: 15px;
 
-            display: flex;
+    outline: none;
 
-            align-items: center;
-            justify-content: center;
+}
 
-            font-size: 40px;
-        }
 
-        .channel-info {
-            padding: 15px;
-        }
+.search-box:focus {
 
-        .channel-name {
-            font-size: 17px;
-            font-weight: bold;
-        }
+    border-color: #e50914;
 
-        .location {
-            color: #999;
+}
 
-            font-size: 13px;
 
-            margin-top: 6px;
-        }
+/* ========================================
+   CONTAINER
+======================================== */
 
-        .status {
-            margin-top: 10px;
+.container {
 
-            font-size: 13px;
-        }
+    max-width: 1200px;
 
-        .live {
-            color: #ff3030;
-            font-weight: bold;
-        }
+    margin: auto;
 
-        .offline {
-            color: #777;
-        }
+    padding:
+        0 20px 60px;
 
-        /* FOOTER */
+}
 
-        footer {
-            text-align: center;
 
-            padding: 30px;
+.section-title {
 
-            color: #777;
+    margin-top: 30px;
 
-            border-top: 1px solid #20242e;
+    margin-bottom: 15px;
 
-            margin-top: 30px;
-        }
+    font-size: 20px;
 
-    </style>
+}
+
+
+/* ========================================
+   PLAYER
+======================================== */
+
+.player-wrapper {
+
+    background: #000;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #292e3a;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.4);
+
+}
+
+
+.player {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #000;
+
+}
+
+
+.player iframe {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    display: block;
+
+}
+
+
+.player-info {
+
+    background: #12151d;
+
+    padding: 15px 18px;
+
+}
+
+
+.player-title {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+.player-location {
+
+    color: #999;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+
+.player-status {
+
+    color: #ff3030;
+
+    font-size: 13px;
+
+    margin-top: 8px;
+
+}
+
+
+/* ========================================
+   FILTER
+======================================== */
+
+.filters {
+
+    display: flex;
+
+    gap: 9px;
+
+    overflow-x: auto;
+
+    padding:
+        5px 0 15px;
+
+}
+
+
+.filters::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+.filter {
+
+    flex-shrink: 0;
+
+    padding:
+        10px 17px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #191e29;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+
+.filter.active {
+
+    background: #e50914;
+
+}
+
+
+/* ========================================
+   CHANNEL GRID
+======================================== */
+
+.channel-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(210px, 1fr)
+        );
+
+    gap: 16px;
+
+}
+
+
+/* ========================================
+   CHANNEL CARD
+======================================== */
+
+.channel {
+
+    background: #151923;
+
+    border:
+        1px solid #252a35;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        border 0.2s;
+
+}
+
+
+.channel:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #444b5b;
+
+}
+
+
+/* ========================================
+   THUMBNAIL
+======================================== */
+
+.thumbnail {
+
+    height: 125px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #252b38,
+            #0d1016
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 48px;
+
+}
+
+
+.channel-info {
+
+    padding: 15px;
+
+}
+
+
+.channel-name {
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+}
+
+
+.location {
+
+    margin-top: 6px;
+
+    color: #999;
+
+    font-size: 13px;
+
+}
+
+
+.status {
+
+    margin-top: 10px;
+
+    font-size: 13px;
+
+}
+
+
+.status-live {
+
+    color: #ff3030;
+
+    font-weight: bold;
+
+}
+
+
+.status-offline {
+
+    color: #777;
+
+}
+
+
+/* ========================================
+   INFO BOX
+======================================== */
+
+.info-box {
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    background: #11151e;
+
+    border:
+        1px solid #252a35;
+
+}
+
+
+.info-box h3 {
+
+    margin-top: 0;
+
+}
+
+
+.info-box p {
+
+    color: #999;
+
+    line-height: 1.6;
+
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    border-top:
+        1px solid #20242e;
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+/* ========================================
+   TOMBOL ATAS
+======================================== */
+
+.top-button {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #e50914;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.4);
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .logo {
+
+        font-size: 17px;
+
+    }
+
+    .header {
+
+        padding:
+            14px 15px;
+
+    }
+
+    .search-area {
+
+        padding:
+            0 15px;
+
+    }
+
+    .container {
+
+        padding:
+            0 15px 50px;
+
+    }
+
+    .section-title {
+
+        font-size: 18px;
+
+    }
+
+    .channel-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+
+    }
+
+    .thumbnail {
+
+        height: 95px;
+
+        font-size: 35px;
+
+    }
+
+    .channel-info {
+
+        padding: 11px;
+
+    }
+
+    .channel-name {
+
+        font-size: 14px;
+
+    }
+
+    .location,
+    .status {
+
+        font-size: 11px;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -258,21 +618,27 @@
 <body>
 
 
-<!-- HEADER -->
+<!-- ========================================
+     HEADER
+======================================== -->
 
 <header>
 
-    <div class="header-content">
+    <div class="header">
 
         <div class="logo">
 
             🇮🇩 LIVE
-            <span>INDONESIA</span>
+            <span class="logo-red">
+                INDONESIA
+            </span>
 
         </div>
 
-        <div>
+        <div class="header-right">
+
             📺
+
         </div>
 
     </div>
@@ -281,50 +647,110 @@
 
 
 
-<!-- SEARCH -->
+<!-- ========================================
+     SEARCH
+======================================== -->
 
-<div class="search">
+<div class="search-area">
 
     <input
-        type="text"
+
         id="search"
+
+        class="search-box"
+
+        type="text"
+
         placeholder="🔎 Cari channel atau daerah..."
+
     >
 
 </div>
 
 
 
-<!-- MAIN -->
+<!-- ========================================
+     MAIN
+======================================== -->
 
 <main class="container">
 
 
-    <!-- LIVE PLAYER -->
+    <!-- PLAYER -->
 
-    <h2 class="title">
+    <h2 class="section-title">
 
         🔴 Live Sekarang
 
     </h2>
 
 
-    <div
-        class="player"
-        id="player"
-    >
+    <div class="player-wrapper">
 
-        <div class="player-text">
 
-            <div class="player-icon">
-                📺
-            </div>
+        <div
+            class="player"
+            id="player"
+        >
 
-            <p>
-                Pilih channel untuk menonton live
-            </p>
+            <iframe
+
+                id="videoPlayer"
+
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+
+                title="LIVE INDONESIA Player"
+
+                allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share
+                "
+
+                allowfullscreen
+
+            ></iframe>
 
         </div>
+
+
+        <div class="player-info">
+
+            <div
+                class="player-title"
+                id="playerTitle"
+            >
+
+                Jakarta Live
+
+            </div>
+
+
+            <div
+                class="player-location"
+                id="playerLocation"
+            >
+
+                📍 Jakarta, Indonesia
+
+            </div>
+
+
+            <div
+                class="player-status"
+                id="playerStatus"
+            >
+
+                🔴 DEMO PLAYER
+
+            </div>
+
+        </div>
+
 
     </div>
 
@@ -332,7 +758,7 @@
 
     <!-- DAERAH -->
 
-    <h2 class="title">
+    <h2 class="section-title">
 
         📍 Daerah Indonesia
 
@@ -344,7 +770,7 @@
 
         <button
             class="filter active"
-            onclick="filterChannel('all')"
+            onclick="filterChannel('all', this)"
         >
 
             Semua
@@ -354,7 +780,7 @@
 
         <button
             class="filter"
-            onclick="filterChannel('Jakarta')"
+            onclick="filterChannel('Jakarta', this)"
         >
 
             Jakarta
@@ -364,7 +790,7 @@
 
         <button
             class="filter"
-            onclick="filterChannel('Jawa Barat')"
+            onclick="filterChannel('Jawa Barat', this)"
         >
 
             Jawa Barat
@@ -374,7 +800,7 @@
 
         <button
             class="filter"
-            onclick="filterChannel('Bali')"
+            onclick="filterChannel('Bali', this)"
         >
 
             Bali
@@ -384,7 +810,7 @@
 
         <button
             class="filter"
-            onclick="filterChannel('Jawa Timur')"
+            onclick="filterChannel('Jawa Timur', this)"
         >
 
             Jawa Timur
@@ -394,7 +820,7 @@
 
         <button
             class="filter"
-            onclick="filterChannel('Sumatera')"
+            onclick="filterChannel('Sumatera', this)"
         >
 
             Sumatera
@@ -408,7 +834,7 @@
 
     <!-- CHANNEL -->
 
-    <h2 class="title">
+    <h2 class="section-title">
 
         📺 Channel Indonesia
 
@@ -421,13 +847,24 @@
     >
 
 
-
         <!-- JAKARTA -->
 
         <div
+
             class="channel"
+
             data-location="Jakarta"
-            onclick="openChannel('Jakarta Live')"
+
+            data-name="Jakarta Live"
+
+            onclick="
+                openChannel(
+                    'Jakarta Live',
+                    'Jakarta, Indonesia',
+                    'dQw4w9WgXcQ'
+                )
+            "
+
         >
 
             <div class="thumbnail">
@@ -453,9 +890,9 @@
                 </div>
 
 
-                <div class="status live">
+                <div class="status status-live">
 
-                    🔴 LIVE
+                    🔴 LIVE DEMO
 
                 </div>
 
@@ -468,9 +905,21 @@
         <!-- BANDUNG -->
 
         <div
+
             class="channel"
+
             data-location="Jawa Barat"
-            onclick="openChannel('Bandung Live')"
+
+            data-name="Bandung Live"
+
+            onclick="
+                openChannel(
+                    'Bandung Live',
+                    'Jawa Barat, Indonesia',
+                    'dQw4w9WgXcQ'
+                )
+            "
+
         >
 
             <div class="thumbnail">
@@ -496,7 +945,7 @@
                 </div>
 
 
-                <div class="status offline">
+                <div class="status status-offline">
 
                     ⚫ OFFLINE
 
@@ -511,9 +960,21 @@
         <!-- BALI -->
 
         <div
+
             class="channel"
+
             data-location="Bali"
-            onclick="openChannel('Bali Live')"
+
+            data-name="Bali Live"
+
+            onclick="
+                openChannel(
+                    'Bali Live',
+                    'Bali, Indonesia',
+                    'dQw4w9WgXcQ'
+                )
+            "
+
         >
 
             <div class="thumbnail">
@@ -539,7 +1000,7 @@
                 </div>
 
 
-                <div class="status offline">
+                <div class="status status-offline">
 
                     ⚫ OFFLINE
 
@@ -554,9 +1015,21 @@
         <!-- SURABAYA -->
 
         <div
+
             class="channel"
+
             data-location="Jawa Timur"
-            onclick="openChannel('Surabaya Live')"
+
+            data-name="Surabaya Live"
+
+            onclick="
+                openChannel(
+                    'Surabaya Live',
+                    'Jawa Timur, Indonesia',
+                    'dQw4w9WgXcQ'
+                )
+            "
+
         >
 
             <div class="thumbnail">
@@ -582,7 +1055,7 @@
                 </div>
 
 
-                <div class="status offline">
+                <div class="status status-offline">
 
                     ⚫ OFFLINE
 
@@ -594,6 +1067,144 @@
 
 
 
+        <!-- MEDAN -->
+
+        <div
+
+            class="channel"
+
+            data-location="Sumatera"
+
+            data-name="Medan Live"
+
+            onclick="
+                openChannel(
+                    'Medan Live',
+                    'Sumatera Utara, Indonesia',
+                    'dQw4w9WgXcQ'
+                )
+            "
+
+        >
+
+            <div class="thumbnail">
+
+                🌇
+
+            </div>
+
+
+            <div class="channel-info">
+
+                <div class="channel-name">
+
+                    Medan Live
+
+                </div>
+
+
+                <div class="location">
+
+                    📍 Sumatera Utara
+
+                </div>
+
+
+                <div class="status status-offline">
+
+                    ⚫ OFFLINE
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MAKASSAR -->
+
+        <div
+
+            class="channel"
+
+            data-location="Sulawesi"
+
+            data-name="Makassar Live"
+
+            onclick="
+                openChannel(
+                    'Makassar Live',
+                    'Sulawesi Selatan, Indonesia',
+                    'dQw4w9WgXcQ'
+                )
+            "
+
+        >
+
+            <div class="thumbnail">
+
+                🌊
+
+            </div>
+
+
+            <div class="channel-info">
+
+                <div class="channel-name">
+
+                    Makassar Live
+
+                </div>
+
+
+                <div class="location">
+
+                    📍 Sulawesi Selatan
+
+                </div>
+
+
+                <div class="status status-offline">
+
+                    ⚫ OFFLINE
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- INFO -->
+
+    <div class="info-box">
+
+        <h3>
+            🇮🇩 Tentang LIVE INDONESIA
+        </h3>
+
+        <p>
+
+            LIVE INDONESIA adalah konsep
+            platform untuk menemukan dan
+            menonton berbagai siaran langsung
+            dari seluruh Indonesia berdasarkan
+            daerah dan channel.
+
+        </p>
+
+        <p>
+
+            Saat ini website masih dalam
+            tahap pengembangan.
+
+        </p>
+
     </div>
 
 
@@ -601,144 +1212,203 @@
 
 
 
-<!-- FOOTER -->
+<!-- ========================================
+     FOOTER
+======================================== -->
 
 <footer>
 
-    🇮🇩 LIVE INDONESIA
+    🇮🇩 <strong>LIVE INDONESIA</strong>
 
-    <br>
+    <br><br>
 
     Platform Live Streaming Indonesia
 
+    <br>
+
+    © 2026 LIVE INDONESIA
+
 </footer>
+
+
+
+<!-- TOMBOL KE ATAS -->
+
+<button
+    class="top-button"
+    onclick="window.scrollTo(0,0)"
+>
+
+    ↑
+
+</button>
 
 
 
 <script>
 
 
-/* =========================
+/* ========================================
    OPEN CHANNEL
-========================= */
+======================================== */
 
 
-function openChannel(name) {
+function openChannel(
+    name,
+    location,
+    videoId
+) {
 
 
     const player =
-        document.getElementById("player");
+        document.getElementById(
+            "videoPlayer"
+        );
 
 
-    player.innerHTML = `
-
-        <div
-            style="
-                width:100%;
-                height:100%;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                flex-direction:column;
-                text-align:center;
-            "
-        >
-
-            <div
-                style="
-                    font-size:50px;
-                "
-            >
-                📺
-            </div>
+    const title =
+        document.getElementById(
+            "playerTitle"
+        );
 
 
-            <h3>
-                ${name}
-            </h3>
+    const locationText =
+        document.getElementById(
+            "playerLocation"
+        );
 
 
-            <p
-                style="
-                    color:#999;
-                "
-            >
-
-                Channel dipilih.
-
-            </p>
+    const status =
+        document.getElementById(
+            "playerStatus"
+        );
 
 
-            <p
-                style="
-                    color:#777;
-                    font-size:13px;
-                "
-            >
+    /*
+       Mengganti video player
+    */
 
-                Sumber streaming belum dipasang.
-
-            </p>
-
-        </div>
-
-    `;
+    player.src =
+        "https://www.youtube.com/embed/"
+        + videoId
+        + "?autoplay=1";
 
 
-    player.scrollIntoView({
+    /*
+       Mengganti informasi channel
+    */
 
-        behavior: "smooth",
+    title.innerText = name;
 
-        block: "center"
+    locationText.innerText =
+        "📍 " + location;
 
-    });
+
+    status.innerText =
+        "🔴 CHANNEL DIPILIH";
+
+
+    /*
+       Scroll menuju player
+    */
+
+    document
+        .getElementById("player")
+        .scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+        });
 
 }
 
 
 
-/* =========================
+/* ========================================
    FILTER CHANNEL
-========================= */
+======================================== */
 
 
-function filterChannel(location) {
+function filterChannel(
+    location,
+    button
+) {
 
 
     const channels =
-        document.querySelectorAll(".channel");
+        document.querySelectorAll(
+            ".channel"
+        );
 
 
-    channels.forEach(channel => {
+    const buttons =
+        document.querySelectorAll(
+            ".filter"
+        );
 
 
-        if (
-            location === "all" ||
-            channel.dataset.location === location
-        ) {
+    /*
+       Reset tombol
+    */
 
-            channel.style.display =
-                "block";
+    buttons.forEach(
+        function(btn) {
+
+            btn.classList.remove(
+                "active"
+            );
 
         }
+    );
 
-        else {
 
-            channel.style.display =
-                "none";
+    /*
+       Aktifkan tombol yang diklik
+    */
+
+    button.classList.add(
+        "active"
+    );
+
+
+    /*
+       Filter channel
+    */
+
+    channels.forEach(
+        function(channel) {
+
+
+            if (
+                location === "all" ||
+                channel.dataset.location ===
+                location
+            ) {
+
+                channel.style.display =
+                    "block";
+
+            }
+
+            else {
+
+                channel.style.display =
+                    "none";
+
+            }
 
         }
-
-    });
-
+    );
 
 }
 
 
 
-/* =========================
+/* ========================================
    SEARCH
-========================= */
+======================================== */
 
 
 document
@@ -748,38 +1418,45 @@ document
         function() {
 
 
-            const search =
-                this.value.toLowerCase();
+            const keyword =
+                this.value
+                    .toLowerCase()
+                    .trim();
 
 
             const channels =
-                document.querySelectorAll(".channel");
+                document.querySelectorAll(
+                    ".channel"
+                );
 
 
-            channels.forEach(channel => {
+            channels.forEach(
+                function(channel) {
 
 
-                const text =
-                    channel.innerText.toLowerCase();
+                    const text =
+                        channel.innerText
+                            .toLowerCase();
 
 
-                if (
-                    text.includes(search)
-                ) {
+                    if (
+                        text.includes(keyword)
+                    ) {
 
-                    channel.style.display =
-                        "block";
+                        channel.style.display =
+                            "block";
+
+                    }
+
+                    else {
+
+                        channel.style.display =
+                            "none";
+
+                    }
 
                 }
-
-                else {
-
-                    channel.style.display =
-                        "none";
-
-                }
-
-            });
+            );
 
 
         }
