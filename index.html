@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Indonesia 🇮🇩</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #0f1115;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background: #151922;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .hero {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .live-box {
+            max-width: 800px;
+            margin: auto;
+            background: #000;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .live-box p {
+            color: #aaa;
+        }
+
+        .channels {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .channel-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .channel {
+            background: #191d27;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .live {
+            color: #ff3b30;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🇮🇩 LIVE INDONESIA</h1>
+    <p>Platform Live Streaming Indonesia</p>
+</header>
+
+<section class="hero">
+
+    <h2>🔴 Live Sekarang</h2>
+
+    <div class="live-box">
+        <p>Belum ada siaran langsung</p>
+    </div>
+
+</section>
+
+<section class="channels">
+
+    <h2>📺 Channel Indonesia</h2>
+
+    <div class="channel-list">
+
+        <div class="channel">
+            <h3>Jakarta Live</h3>
+            <p class="live">🔴 LIVE</p>
+            <p>Jakarta, Indonesia</p>
+        </div>
+
+        <div class="channel">
+            <h3>Bandung Live</h3>
+            <p>⚫ OFFLINE</p>
+            <p>Jawa Barat</p>
+        </div>
+
+        <div class="channel">
+            <h3>Bali Live</h3>
+            <p>⚫ OFFLINE</p>
+            <p>Bali, Indonesia</p>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
